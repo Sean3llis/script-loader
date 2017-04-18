@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Script Loader</title>
+</head>
+<body>
+  <script src="build.js" charset="utf-8"></script>
+  <script type="text/javascript">
+  scriptLoader.load([
+    'https://cdn.mediabrix.com/v4.1/js/mbrix.min.js',
+    'https://cdn.mediabrix.com/v4.1/js/vendor.min.js',
+    'http://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.js'
+  ]).then(() => {
+    console.log('all scripts loaded');
+  });
+  </script>
+</body>
+</html>
