@@ -6,12 +6,13 @@
   <title>Script Loader</title>
 </head>
 <body>
-  <script src="build.js" charset="utf-8"></script>
+  <script src="/build/script-loader.js" charset="utf-8"></script>
   <script type="text/javascript">
+  console.log('scriptLoader ~~>', scriptLoader);
   scriptLoader.load([
-    'https://cdn.mediabrix.com/v4.1/js/mbrix.min.js',
-    'https://cdn.mediabrix.com/v4.1/js/vendor.min.js',
-    'http://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.js'
+    'http://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react-dom-server.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react.min.js',
   ]).then(() => {
     console.log('all scripts loaded');
   });
