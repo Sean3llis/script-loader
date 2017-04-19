@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Script Loader</title>
+</head>
+<body>
+  <script src="script-loader.js" charset="utf-8"></script>
+  <script type="text/javascript">
+  // scriptLoader.load([
+  //   'http://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.js',
+  //   'https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react-dom-server.js',
+  //   'https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react.min.js',
+  // ]).then(() => {
+  //   console.log('Array all scripts dropped');
+  // });
+
+  // scriptLoader.load('https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js').then(() => {
+  //   console.log('String script dropped');
+  // });
+  scriptLoader.load({
+    foo: 'http://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.js',
+    bar: 'https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react-dom-server.js'
+  }).then(() => {
+    console.log('object done');
+  });
+
+  </script>
+</body>
+</html>

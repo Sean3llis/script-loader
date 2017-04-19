@@ -9,6 +9,7 @@ module.exports = {
     library: 'scriptLoader',
     libraryTarget: 'var'
   },
+  devtool: 'source-map',
   module: {
     rules: [
       {

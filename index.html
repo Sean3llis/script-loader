@@ -6,7 +6,7 @@
   <title>Script Loader</title>
 </head>
 <body>
-  <script src="/build/script-loader.js" charset="utf-8"></script>
+  <script src="script-loader.js" charset="utf-8"></script>
   <script type="text/javascript">
   console.log('scriptLoader ~~>', scriptLoader);
   scriptLoader.load([
@@ -14,7 +14,11 @@
     'https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react-dom-server.js',
     'https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react.min.js',
   ]).then(() => {
-    console.log('all scripts loaded');
+    console.log('Array all scripts dropped');
+  });
+
+  scriptLoader.load('https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js').then(() => {
+    console.log('String script dropped');
   });
   </script>
 </body>
