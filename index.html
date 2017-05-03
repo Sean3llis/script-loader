@@ -20,6 +20,13 @@
   scriptLoader.load('https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js').then(() => {
     console.log('String script dropped');
   });
+
+  scriptLoader.load({
+    'foo': 'http://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.js',
+    'bar': 'https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react.min.js'
+  }).then(() => {
+    console.log('object method done');
+  });
   </script>
 </body>
 </html>

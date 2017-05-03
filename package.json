@@ -1,24 +1,41 @@
 {
-  "name": "script_loader",
+  "name": "script-dropper",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel script-loader.js -o build.js"
+    "dev": "watch 'npm run build' src",
+    "test": "jest",
+    "test:watch": "npm test -- --watch",
+    "serve": "node_modules/.bin/webpack-dev-server",
+    "build": "babel src -d build"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sean3llis/script-loader.git"
+  },
+  "babel": {
+    "presets": [
+      "latest"
+    ]
+  },
+  "keywords": [
+    "script",
+    "loader",
+    "dropper",
+    "async",
+    "mobile",
+    "scripts",
+    "wait",
+    "drop"
+  ],
+  "author": "Sean Ellis",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "babel-cli": "^6.24.1",
-    "babel-core": "^6.24.1",
-    "babel-loader": "^6.4.1",
-    "babel-preset-env": "^1.3.3",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "promise-polyfill": "^6.0.2",
-    "webpack": "^2.4.1",
-    "webpack-dev-server": "^2.4.2"
+    "babel-preset-latest": "^6.24.1",
+    "jest": "^19.0.2",
+    "np": "^2.13.3",
+    "watch": "^1.0.2"
   }
 }

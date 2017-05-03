@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Script Loader</title>
+  <script type="text/javascript">
+  var scriptLoader=function(r){function e(n){if(t[n])return t[n].exports;var o=t[n]={i:n,l:!1,exports:{}};return r[n].call(o.exports,o,o.exports,e),o.l=!0,o.exports}var t={};return e.m=r,e.c=t,e.i=function(r){return r},e.d=function(r,t,n){e.o(r,t)||Object.defineProperty(r,t,{configurable:!1,enumerable:!0,get:n})},e.n=function(r){var t=r&&r.__esModule?function(){return r.default}:function(){return r};return e.d(t,"a",t),t},e.o=function(r,e){return Object.prototype.hasOwnProperty.call(r,e)},e.p="",e(e.s=1)}([function(r,e,t){"use strict";function n(r){if(Array.isArray(r)){for(var e=0,t=Array(r.length);e<r.length;e++)t[e]=r[e];return t}return Array.from(r)}function o(r,e){return new Promise(function(t,n){var o=document.getElementsByTagName("head")[0],u=document.createElement("script");u.onload=function(){return t()},u.src=r,e&&(u.id=e),o.appendChild(u)})}function u(r){return o(r)}function i(r){var e=[];return r.forEach(function(r){e.push(o(r))}),e}function a(r){var e=[];for(var t in r){var n=r[t];e.push(o(n,t))}return e}Object.defineProperty(e,"__esModule",{value:!0});e.default={load:function(r){arguments.length>1&&void 0!==arguments[1]&&arguments[1];if(this.sources=r,this.hopper=[],!r)return!1;if("string"==typeof r)this.hopper.push(u(r));else if(r instanceof Array){var e;(e=this.hopper).push.apply(e,n(i(r)))}else if(r instanceof Object){var t;(t=this.hopper).push.apply(t,n(a(r)))}return Promise.all(this.hopper)}}},function(r,e,t){"use strict";r.exports=t(0).default}]);
+  //# sourceMappingURL=script-loader.js.map
+  </script>
 </head>
 <body>
   <script src="script-loader.js" charset="utf-8"></script>
@@ -21,7 +25,7 @@
   // });
   scriptLoader.load({
     foo: 'http://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.js',
-    bar: 'https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react-dom-server.js'
+    bar: 'https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js'
   }).then(() => {
     console.log('object done');
   });

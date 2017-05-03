@@ -2,7 +2,7 @@ var path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './src/script-loader.js',
+  entry: './src/entry.js',
   output: {
     filename: 'script-loader.js',
     path: path.resolve(__dirname, 'build'),
@@ -18,10 +18,19 @@ module.exports = {
         use: [{
           loader: 'babel-loader',
           options: {
-            presets: [ 'es2015', 'stage-0' ]
+            presets: [ ['es2015', { modules: false }], 'stage-0' ]
           }
         }],
       },
     ]
+  },
+  devServer: {
+    contentBase: path.join(__dirname, 'build'),
+    compress: true,
+    port: 9000,
+    overlay: {
+      warnings: true,
+      errors: true
+    }
   }
 };
